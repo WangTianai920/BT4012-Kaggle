@@ -1,0 +1,36 @@
+{
+  "selected_by": "Wang TianAi",
+  "student_number": "A0288096L",
+  "course": "BT4012",
+  "selection_date": "2026-10-23",
+  "models": [
+    {
+      "submission": "1019-6",
+      "public_auc": "0.95967",
+      "model": "Trial120 pipeline (teacher + graph residual) with full weight on time steps 18-35 and exponentially faded weight (3-period half-life) on earlier steps; 5-seed ensemble.",
+      "file": "Submissions to Kaggle/1019-6.csv",
+      "sha256": "6482badb1181e6ef6c51f7203ed93e1d1e4df062b353795a3cd7f0455de70333",
+      "rows": "15329",
+      "local_matches_archive": "True",
+      "source": "user_reported",
+      "pearson_vs_1019_6": "1.0",
+      "spearman_vs_1019_6": "1.0",
+      "within_period_rank_corr_vs_1019_6": "1.0",
+      "public_gap_to_best": "0.0"
+    },
+    {
+      "submission": "0929-1",
+      "public_auc": "0.94997",
+      "model": "0916-2 with 0.10 label-free period log-odds median alignment; preserves within-period transaction ranking",
+      "file": "Submissions to Kaggle/0929 - 1.csv",
+      "sha256": "6619e19b57122df1b48a7c533477646f3c40ef293749295848cc45abd378f51d",
+      "rows": "15329",
+      "local_matches_archive": "True",
+      "source": "user_reported",
+      "pearson_vs_1019_6": "0.9817412596582566",
+      "spearman_vs_1019_6": "0.9108983091780357",
+      "within_period_rank_corr_vs_1019_6": "0.8922900773212953",
+      "public_gap_to_best": "-0.009700000000000042"
+    }
+  ]
+}

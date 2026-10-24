@@ -1,0 +1,41 @@
+{
+  "intended_grain": "one row per transaction",
+  "train_rows": 141772,
+  "test_rows": 15329,
+  "feature_count": 165,
+  "labelled_train_rows": 31235,
+  "unknown_label_rows": 110537,
+  "licit_rows": 27591,
+  "illicit_rows": 3644,
+  "illicit_rate_among_labelled": 0.1166639987193853,
+  "train_time_min": 1,
+  "train_time_max": 35,
+  "test_time_min": 36,
+  "test_time_max": 49,
+  "duplicate_train_txid": 0,
+  "duplicate_test_txid": 0,
+  "train_test_txid_overlap": 0,
+  "duplicate_edges": 0,
+  "self_loop_edges": 0,
+  "edge_rows": 234355,
+  "edge_unique_nodes": 203769,
+  "edge_nodes_absent_from_train_and_test": 46668,
+  "model_transaction_ids_absent_from_edge_list": 0,
+  "sample_rows": 15329,
+  "sample_columns": [
+    "index",
+    "target"
+  ],
+  "sample_index_matches_test": true,
+  "train_feature_profile": {
+    "missing_cells": 0,
+    "missing_rate": 0.0,
+    "infinite_cells": 0
+  },
+  "test_feature_profile": {
+    "missing_cells": 0,
+    "missing_rate": 0.0,
+    "infinite_cells": 0
+  },
+  "constant_train_features": []
+}

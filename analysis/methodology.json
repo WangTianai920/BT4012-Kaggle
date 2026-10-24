@@ -1,0 +1,24 @@
+{
+  "rows": 15329,
+  "submissions": 63,
+  "periods": [
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "alignment": "sample_submission index; unique identical ID sets",
+  "public_scores": "User-reported; user confirms ledger complete; private scores unknown",
+  "correlation": "Pearson probabilities; Spearman average ranks; within-period percentile-rank Pearson pooled over rows",
+  "limitation": "Test labels unavailable: prediction similarity is not error correlation or private-score evidence"
+}

@@ -1,0 +1,32 @@
+{
+  "verified_at": "2026-10-24T02:20:44.147614+08:00",
+  "notebook": "e1303010.ipynb",
+  "executed_code_cells": 9,
+  "all_cells_executed": true,
+  "no_cell_errors": true,
+  "models": {
+    "1019-6": {
+      "rows": 15329,
+      "max_absolute_difference_from_original_submission": 0.0,
+      "tolerance": 1e-05,
+      "accepted": true,
+      "csv_sha256": "6482badb1181e6ef6c51f7203ed93e1d1e4df062b353795a3cd7f0455de70333",
+      "original_submission_sha256": "6482badb1181e6ef6c51f7203ed93e1d1e4df062b353795a3cd7f0455de70333"
+    },
+    "0929-1": {
+      "rows": 15329,
+      "max_absolute_difference_from_original_submission": 2.6756374893466273e-14,
+      "tolerance": 1e-05,
+      "accepted": true,
+      "csv_sha256": "c73810a9a1df01f1f036800fdec72b1f94f52e5781f8b0cfe1334fa4f78a60fa",
+      "original_submission_sha256": "6619e19b57122df1b48a7c533477646f3c40ef293749295848cc45abd378f51d"
+    }
+  },
+  "runtime_seconds": 446.89417123794556,
+  "notes": [
+    "Notebook executed top-to-bottom with the existing pinned environment.",
+    "Optional in-notebook references were the previously verified reproduction outputs; separate independent checks above use the original submission files.",
+    "No fresh online dependency installation was attempted.",
+    "No GitHub push or Kaggle upload performed."
+  ]
+}

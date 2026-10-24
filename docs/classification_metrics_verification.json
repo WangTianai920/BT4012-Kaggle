@@ -1,0 +1,27 @@
+{
+  "checks": [
+    {
+      "origin": 21,
+      "same_evaluation_population": true,
+      "n": 11705,
+      "label_join_verified": true,
+      "binary_original_auc_reproduced": true
+    },
+    {
+      "origin": 28,
+      "same_evaluation_population": true,
+      "n": 6028,
+      "label_join_verified": true,
+      "binary_original_auc_reproduced": true
+    }
+  ],
+  "numpy_confusion_arithmetic_pass": true,
+  "boundary_tests_pass": true,
+  "threshold": 0.5,
+  "no_threshold_search": true,
+  "unknown_labels_excluded": true,
+  "overlapping_origins_not_pooled": true,
+  "metrics_sha256": "c16134cc7eeddf22e0ddb89c8331da5755303d650db783ac6e7ea125c7d7523e",
+  "predictions_sha256": "089c7b636e814e92df82a6f84ffeda38368dbeb917c5bed297f8233c5f43a702",
+  "script_sha256": "038ff9efb1ca24a9819ed4386930f92a967ef08d135e35a9f422955617e74cb9"
+}

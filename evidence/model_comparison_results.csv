@@ -1,0 +1,11 @@
+fold,roc_auc,model_name
+fold_1,0.9092954326641116,Logistic regression
+fold_2,0.9034857451074452,Logistic regression
+fold_1,0.9417390636452352,XGBoost
+fold_1,0.9527589247597368,Histogram gradient boosting
+fold_1,0.892535068201318,Extra Trees
+fold_1,0.9337596672368718,Neural network
+fold_2,0.9964402374746981,XGBoost
+fold_2,0.9964975282087786,Histogram gradient boosting
+fold_2,0.9953329236401096,Extra Trees
+fold_2,0.9854024683279874,Neural network

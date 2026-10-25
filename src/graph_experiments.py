@@ -4,6 +4,7 @@ import hashlib
 import json
 import time
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import joblib
 import matplotlib.pyplot as plt
@@ -11,10 +12,12 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.metrics import roc_auc_score
-from xgboost import XGBClassifier
 
 from src.competition import FIGURE_DIR, PROJECT_ROOT, RANDOM_SEED, REPORT_DIR, feature_columns
 from src.model_comparison import MODEL_CONFIGURATIONS
+
+if TYPE_CHECKING:
+    from xgboost import XGBClassifier
 
 
 MODEL_DIR = PROJECT_ROOT / "models"
@@ -61,6 +64,8 @@ def _histogram_model() -> HistGradientBoostingClassifier:
 
 
 def _xgboost_model(n_estimators: int, early_stopping_rounds: int | None = None) -> XGBClassifier:
+    # Historical XGBoost experiments are optional; selected HGB models do not need its native runtime.
+    from xgboost import XGBClassifier
     configuration = MODEL_CONFIGURATIONS["XGBoost"].copy()
     configuration["n_estimators"] = n_estimators
     configuration.pop("early_stopping_rounds", None)

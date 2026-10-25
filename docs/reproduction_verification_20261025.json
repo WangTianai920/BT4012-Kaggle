@@ -1,0 +1,49 @@
+{
+  "verified_at_sgt": "2026-10-25T15:36:26.370402+08:00",
+  "git_base_revision": "47b5d756f2cbaaed2a3d1ccb7e2d3dfb6c9594f2",
+  "python": "3.10.11",
+  "platform": "Darwin arm64",
+  "fresh_virtual_environment": true,
+  "pinned_requirements_install_succeeded": true,
+  "pip_check_pass": true,
+  "notebook_executed_top_to_bottom": true,
+  "executed_code_cells": 8,
+  "no_cell_errors": true,
+  "data_location": "data/ (local competition files, excluded from Git)",
+  "archived_predictions_required_for_generation": false,
+  "originals_compared_only_after_generation": true,
+  "runtime_seconds": 439.214234828949,
+  "contract_tests_pass": 8,
+  "native_xgboost_runtime_not_required_for_selected_models": true,
+  "models": {
+    "1019-6": {
+      "checks_passed": true,
+      "rows": 15329,
+      "minimum": 5.094550766469974e-07,
+      "maximum": 0.9999151931880624,
+      "max_absolute_difference_from_original": 0.0,
+      "tolerance": 1e-05,
+      "accepted": true,
+      "csv_sha256": "6482badb1181e6ef6c51f7203ed93e1d1e4df062b353795a3cd7f0455de70333",
+      "original_submission_sha256": "6482badb1181e6ef6c51f7203ed93e1d1e4df062b353795a3cd7f0455de70333"
+    },
+    "0929-1": {
+      "checks_passed": true,
+      "rows": 15329,
+      "minimum": 1.4926049573324155e-05,
+      "maximum": 0.9995404987856163,
+      "max_absolute_difference_from_original": 2.6756374893466273e-14,
+      "tolerance": 1e-05,
+      "accepted": true,
+      "csv_sha256": "c73810a9a1df01f1f036800fdec72b1f94f52e5781f8b0cfe1334fa4f78a60fa",
+      "original_submission_sha256": "6619e19b57122df1b48a7c533477646f3c40ef293749295848cc45abd378f51d"
+    }
+  },
+  "source_recipe_cells_unchanged": [
+    4,
+    6,
+    8,
+    10,
+    12
+  ]
+}

@@ -12,12 +12,17 @@ ROOT=Path(__file__).resolve().parent
 
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument('--data-dir',type=Path,default=ROOT/'data')
+    ap.add_argument('--data-dir',type=Path,default=None,help='Competition CSV folder; defaults to repository data/ or BT4012_DATA_DIR')
     ap.add_argument('--model',choices=['both','1019-6','0929-1'],default='both')
     ap.add_argument('--work-dir',type=Path,default=ROOT/'work')
     ap.add_argument('--output-dir',type=Path,default=ROOT/'outputs')
     ap.add_argument('--reference-dir',type=Path,help='Optional directory containing original 1019-6.csv and 0929-1.csv')
     a=ap.parse_args(); t0=time.time()
+    from final.submission_io import resolve_data_dir, repository_path, check_input_files, write_submissions, SELECTED_MODELS
+    a.data_dir=resolve_data_dir(a.data_dir)
+    raw_sha256=check_input_files(a.data_dir)
+    a.work_dir=repository_path(a.work_dir); a.output_dir=repository_path(a.output_dir)
+    if a.reference_dir is not None: a.reference_dir=repository_path(a.reference_dir)
     a.work_dir=a.work_dir.resolve();a.output_dir=a.output_dir.resolve()
     a.work_dir.mkdir(parents=True,exist_ok=True);a.output_dir.mkdir(parents=True,exist_ok=True)
     import src.competition as competition
@@ -27,7 +32,7 @@ def main():
     regenerate(a.work_dir)
     inp=pipeline.load_inputs(a.work_dir)
     train,test,sample=inp['train'],inp['test'],inp['sample']
-    results={};receipt={'raw_sha256':{n:hashlib.sha256((a.data_dir/n).read_bytes()).hexdigest() for n in ['train.csv','test.csv','txs_edgelist.csv','sample_submission.csv']}}
+    results={};receipt={'raw_sha256':raw_sha256,'requested_models':list(SELECTED_MODELS) if a.model=='both' else [a.model]}
     if a.model in ('both','0929-1'):
         print('Rebuilding 0929-1 binary HGB and historical risk specialists',flush=True)
         from src.combined_challengers import load_features
@@ -78,22 +83,15 @@ def main():
             logits.append(logit(np.clip(sc,1e-12,1-1e-12)))
         results['1019-6']=expit(np.mean(logits,axis=0))
         receipt['1019-6']={'seeds':[42,101,202,303,404],'features':len(cols),'min_period':18,'soft_half_life':3,'history_status_counts':np.bincount(status,minlength=3).tolist()}
-    failures=[]
-    for name,score in results.items():
-        assert len(score)==len(sample)==15329 and np.isfinite(score).all() and ((score>=0)&(score<=1)).all() and np.std(score)>0
-        frame=pd.DataFrame({'index':sample['index'],'target':score});path=a.output_dir/f'{name}.csv';frame.to_csv(path,index=False)
-        item=receipt[name];item['output_sha256']=hashlib.sha256(path.read_bytes()).hexdigest();item['rows']=len(frame)
-        if a.reference_dir:
-            matches=[p for p in a.reference_dir.glob('*.csv') if ''.join(p.stem.split())==name]
-            if len(matches)!=1:raise ValueError(f'Expected one reference file for {name}; found {len(matches)}')
-            reference=pd.read_csv(matches[0])
-            assert np.array_equal(reference['index'],frame['index'])
-            delta=float(np.max(np.abs(reference.target-pd.read_csv(path).target)))
-            item['max_absolute_difference']=delta;item['acceptance_tolerance']=1e-5;item['accepted']=delta<=1e-5
-            print(name,'max absolute difference:',delta,'PASS' if item['accepted'] else 'FAIL',flush=True)
-            if not item['accepted']:failures.append(name)
+    expected=set(SELECTED_MODELS) if a.model=='both' else {a.model}
+    if set(results)!=expected:
+        raise RuntimeError('Not all requested models produced predictions.')
+    summary=write_submissions(results,sample,a.output_dir,a.reference_dir)
+    for name,item in summary.items():
+        receipt[name].update(item)
+        print(f"{name}: {item['rows']} rows, integrity PASS -> {a.output_dir / item['file']}",flush=True)
     receipt['runtime_seconds']=time.time()-t0
+    receipt['complete']=True
     (a.output_dir/'reproduction_receipt.json').write_text(json.dumps(receipt,indent=2))
-    if failures:raise RuntimeError('Reproduction failed: '+', '.join(failures))
     print('Completed in',round(time.time()-t0),'seconds',flush=True)
 if __name__=='__main__':main()

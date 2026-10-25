@@ -16,3 +16,6 @@ outputs/
 .ipynb_checkpoints/
 .pytest_cache/
 *.log
+
+# Ignore a local data directory or a local-only data symlink.
+/data

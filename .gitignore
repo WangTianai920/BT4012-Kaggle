@@ -4,7 +4,6 @@ __pycache__/
 .DS_Store
 .env
 .env.*
-data/
 models/
 work/
 outputs/
@@ -17,5 +16,6 @@ outputs/
 .pytest_cache/
 *.log
 
-# Ignore a local data directory or a local-only data symlink.
-/data
+# Show placement instructions, while excluding every local dataset file.
+/data/*
+!/data/README.md

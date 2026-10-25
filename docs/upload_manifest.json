@@ -1,10 +1,10 @@
 {
-  "generated_at_sgt": "2026-10-25T15:38:34.696012+08:00",
+  "generated_at_sgt": "2026-10-25T22:39:21.167948+08:00",
   "purpose": "Current repository source manifest; data and generated forecasts are excluded.",
   "files": {
-    ".gitignore": "733384169a2a2c0569efec9ea6a07e779ecfea13f0df99aeaed9203edc3f7bb5",
+    ".gitignore": "9dce17a73898f372c43806af3e2be60c03b65cbe980fc4e0602e56fce94ab20f",
     "AI_USAGE.md": "5cd30d9d6540e990e9e12902885d3f97a8a172fec5cb05d5d83075924e2acef2",
-    "README.md": "c6f128ea6ef54ad3c139e35a941b3db216f434fc28ec59afb39b449a1bbd44e4",
+    "README.md": "bfc857789277a5a14ef67d7e21a92392a2c86b88fb64bf2c9811b888b0e48b49",
     "analysis/all_submissions_audit.csv": "f6f251599fa3c8213a0d4698449f3acb645b65cb92363ad788c9e348e867d584",
     "analysis/analyze_submissions.py": "2e0d8c8b6ed55cd0c2d96d0d2fd61e30885ead14ccba06e7c19ccacc6fa4eee4",
     "analysis/methodology.json": "33e39af63898d2c34ec6e7f7c8214d720005889f225a4502253fe17f9d278b84",
@@ -14,6 +14,7 @@
     "analysis/shortlist_pearson.csv": "a85cef1d08b73cf06c41b3e954012be7827b1be812a22dd8416c8aa530ba28a7",
     "analysis/shortlist_spearman.csv": "fa606347584c9449492a6d03fce34ca6b23c7324c4cc7e4b000629f4f71bef52",
     "analysis/spearman_all.csv": "135785d64ba144971f133a9f92f4f9963afb49ff5fbac0342018068f1d86f951",
+    "data/README.md": "90800c3732fc1dff3bcf6ed2d74e2c505ad3672c6a861cffeeb6fc7ee7bd2951",
     "docs/classification_metrics_verification.json": "3c13d62c1b0aadfd46acf36afb2619d75d41cd3f7da0f1f3dea20c56888bdf12",
     "docs/notebook_verification.json": "0397d95d3f36fa0f7417968ceef9d359b61eb90e408059c993dadaacad055df2",
     "docs/reproduction_verification_20261025.json": "093ef0e8c20a0691d56ecbaa3c5bd32cabcc64da3351d469bff46847e8d2c802",

@@ -33,7 +33,7 @@ BT4012-Kaggle/
     └── sample_submission.csv
 ```
 
-The dataset is intentionally **not uploaded to GitHub**. The default input location is this repository's **`data/`** directory. Do not change column names or sample-submission ID order. Training uses periods 1–35; test inference covers periods 36–49. Unknown training labels remain separate from known licit/illicit outcomes.
+The visible `data/` folder contains placement instructions only. The dataset is intentionally **not uploaded to GitHub**. The default input location is this repository's **`data/`** directory. Do not change column names or sample-submission ID order. Training uses periods 1–35; test inference covers periods 36–49. Unknown training labels remain separate from known licit/illicit outcomes.
 
 An alternative local folder is optional: set `BT4012_DATA_DIR` before starting the notebook, or pass `--data-dir` to the command-line runner. An explicit command-line argument overrides the environment variable. Relative paths are interpreted from the repository root, not the terminal's current directory.
 

@@ -1,5 +1,5 @@
 {
-  "generated_at_sgt": "2026-10-25T22:39:21.167948+08:00",
+  "generated_at_sgt": "2026-10-25T22:47:04.217467+08:00",
   "purpose": "Current repository source manifest; data and generated forecasts are excluded.",
   "files": {
     ".gitignore": "9dce17a73898f372c43806af3e2be60c03b65cbe980fc4e0602e56fce94ab20f",
@@ -20,7 +20,7 @@
     "docs/reproduction_verification_20261025.json": "093ef0e8c20a0691d56ecbaa3c5bd32cabcc64da3351d469bff46847e8d2c802",
     "docs/reproduction_verification_20261025.md": "574ddbf7d7e0b60facec00e29725e1da5ac8b6b4ff928429bb737b54cb3d7d36",
     "docs/selected_models.json": "0a9b0be5aa6ba93cd1bf4f9e19b2950a139aa5d8afea034ae112421846e15d39",
-    "e1303010.ipynb": "f12b0779c0cdd2fd637533305db3e18ddcda5a9818244fa49b4e4673cd759a3a",
+    "e1303010.ipynb": "2a26c98f90f3b9d8e7b16501b6c2d3745eabc68b5a26dad127dc6b009011ac80",
     "evaluate_binary_predictions.py": "038ff9efb1ca24a9819ed4386930f92a967ef08d135e35a9f422955617e74cb9",
     "evidence/audit_summary.json": "5e51c841adfa708394d6469d1f6917df4878de678ec021d1260aff84ebe1f4d3",
     "evidence/catboost_rescreen_20260929_readout.md": "8547fa71c89c26a130d7d97b4069651a255c0689f13d090de5c939adfc4b5aaa",
